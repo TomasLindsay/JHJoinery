@@ -1,0 +1,84 @@
+.Gallery{
+display: flex;
+align-items:center;
+width:100%;
+height:auto;
+justify-content: center;
+}
+
+.Section{
+    background-color: #c1cefe;
+    height:60vh;
+    width:90%;
+    border-radius: 40px;
+    display:flex;
+    align-self:center;
+    margin-top:2%
+}
+
+/*  */
+
+img {
+  vertical-align: middle;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+  flex-direction: row;
+  display:flex;
+    width:30%;
+  height:80%;
+  margin:3%;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+  width:100%;
+  height:100%;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+.Info{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-evenly;
+}
+
+.images{
+      display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+/* .row:after {
+  content: "";
+  display: table;
+  clear: both;
+  grid : auto auto auto;
+} */
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+.text{
+    height: 50%;
+    width:50%
+}
