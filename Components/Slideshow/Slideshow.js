@@ -13,7 +13,7 @@ let nextSlide;
 function wrapImageForAnimation(image) {
   const wrapper = document.createElement('div');
   wrapper.style.position = 'relative';
-  wrapper.style.overflow = 'hidden';
+  // wrapper.style.overflow = 'hidden';
   wrapper.style.width = '100%';
   wrapper.style.height = '100%';
   wrapper.style.display = 'block';
