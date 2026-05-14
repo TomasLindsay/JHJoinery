@@ -1,7 +1,8 @@
   const slides = [
   '/Images/Slideshow/SlideshowImg1.jpg',
   '/Images/Slideshow/SlideshowImg2.jpg',
-  '/Images/Slideshow/SlideshowImg3.jpg'
+  '/Images/Slideshow/SlideshowImg3.jpg',
+
 ];
 
 const slideImage = document.getElementById('slideImage');
@@ -20,6 +21,9 @@ function wrapImageForAnimation(image) {
   image.parentNode.replaceChild(wrapper, image);
   wrapper.appendChild(image);
   return wrapper;
+
+ 
+
 }
 
 function setupImageStyle(image, visible) {
