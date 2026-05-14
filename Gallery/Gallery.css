@@ -104,6 +104,7 @@ img {
   height:100%;
   align-content:center;
         border: 2px black solid;
+        
 }
 
 /* Add a pointer when hovering over the thumbnail images */
@@ -156,6 +157,7 @@ img {
 .demo:hover {
   opacity: 1;
   transform: translate(0, -20px);
+    box-shadow: black 0 3px 8px;
 }
 
 .text{
