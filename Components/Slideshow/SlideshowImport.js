@@ -1,5 +1,5 @@
 // SIMPLIFIED VERSION (No Shadow DOM isolation)
-class RemoteComponent extends HTMLElement {
+class SlideshowComponent extends HTMLElement {
   async connectedCallback() {
     const config = {
       html: '/Components/Slideshow/Slideshow.html',
@@ -25,4 +25,4 @@ class RemoteComponent extends HTMLElement {
     }
   }
 }
-customElements.define('slideshow-component', RemoteComponent);
+customElements.define('slideshow-component', SlideshowComponent);
