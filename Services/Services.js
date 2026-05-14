@@ -1,28 +1,58 @@
-let slideIndex = 1;
-showSlides(slideIndex);
+class Gallery {
+  constructor(section) {
+    this.section = section;
+    this.slides = section.querySelectorAll(".mySlides");
+    this.dots = section.querySelectorAll(".demo");
+    this.caption = section.querySelector("#caption");
 
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
+    this.slideIndex = 0;
 
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
+    this.showSlide(this.slideIndex);
 
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("demo");
-  let captionText = document.getElementById("caption");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
+    // Add click events to thumbnails
+    this.dots.forEach((dot, index) => {
+      dot.addEventListener("click", () => {
+        this.showSlide(index);
+      });
+    });
   }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
+
+  showSlide(index) {
+
+    // Loop slides
+    if (index >= this.slides.length) {
+      this.slideIndex = 0;
+    } else if (index < 0) {
+      this.slideIndex = this.slides.length - 1;
+    } else {
+      this.slideIndex = index;
+    }
+
+    // Hide all slides
+    this.slides.forEach(slide => {
+      slide.style.display = "none";
+    });
+
+    // Remove active class
+    this.dots.forEach(dot => {
+      dot.classList.remove("active");
+    });
+
+    // Show current slide
+    this.slides[this.slideIndex].style.display = "block";
+
+    // Activate thumbnail
+    this.dots[this.slideIndex].classList.add("active");
+
+    // Update caption
+    if (this.caption) {
+      this.caption.textContent =
+        this.dots[this.slideIndex].alt;
+    }
   }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-  captionText.innerHTML = dots[slideIndex-1].alt;
 }
+
+// Initialize ALL sections independently
+document.querySelectorAll(".Section").forEach(section => {
+  new Gallery(section);
+});

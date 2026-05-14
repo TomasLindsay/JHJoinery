@@ -4,10 +4,11 @@ align-items:center;
 width:100%;
 height:auto;
 justify-content: center;
+    flex-direction: column;
 }
 
 .Section{
-    background-color: #c1cefe;
+    background-color: #758ecd;
     height:50vh;
     width:90%;
     border-radius: 40px;
@@ -16,6 +17,11 @@ justify-content: center;
     margin-top:2%;
     justify-content: center;
     align-items: center;
+
+}
+
+.Section:nth-child(even) {
+  flex-direction: row-reverse;
 }
 
 /*  */
