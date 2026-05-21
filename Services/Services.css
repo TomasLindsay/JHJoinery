@@ -61,7 +61,7 @@ transform: scale(1);
 opacity: 1;
 }
 
-.arrow{}
+.arrow{
     width: 2%;
     font-size: 30px;
     border: none;
